@@ -1,0 +1,18 @@
+.checklist {
+    padding: 0.5rem;
+    flex-grow: 4;
+}
+
+.iconResolved{
+    text-align: center;
+    color: green !important;
+}
+
+.iconPending{
+    text-align: center;
+    color: red !important;
+}
+
+.actionButtons {
+    text-align: center;
+}

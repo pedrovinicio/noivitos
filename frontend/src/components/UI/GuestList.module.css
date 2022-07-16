@@ -1,0 +1,5 @@
+.guestList {
+    padding: 0.5rem;
+    flex-grow: 5;
+    min-width: 300px;
+}
