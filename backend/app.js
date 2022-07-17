@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors"
 import { Low, JSONFile } from 'lowdb'
 import { uuid } from 'uuidv4';
+import _ from 'lodash';
 
 const app = express()
 
@@ -45,6 +46,13 @@ app.post('/checklist', (req, res) => {
   db.write();
   res.send(db.data.checklist);
 })
+
+app.delete('/checklist/:id', (req, res) => {
+  _.remove(db.data.checklist, {id: req.params.id});
+  db.write();
+  res.send(db.data.checklist);
+})
+
 
 app.listen(3001, () => {
   console.log(`Example app listening on port 3001`)

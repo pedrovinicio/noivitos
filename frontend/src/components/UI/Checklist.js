@@ -42,6 +42,16 @@ const Checklist = () => {
         });
     }
 
+    function onDeleteChecklistItem(e, item){
+        e.preventDefault();
+        api
+            .delete(`/checklist/${item.id}`)  
+            .then((response) => setItems(response.data))
+            .catch((err) => {
+                alert("ops! ocorreu um erro" + err);
+            });
+    }
+
     function updateNewItem(e, property) {
         e.preventDefault();
         newItem[property] = e.target.value;
@@ -96,7 +106,7 @@ const Checklist = () => {
                             {!item.quitado && <td className={classes.iconPending}><FontAwesomeIcon icon={faSquareXmark} size="lg"/></td>}
                             <td className={classes.actionButtons}>
                                 <button>Editar</button>
-                                <button>Excluir</button>
+                                <button onClick={(e) => onDeleteChecklistItem(e, item)}>Excluir</button>
                             </td>
                         </tr>
                     )}
