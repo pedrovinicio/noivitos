@@ -1,6 +1,5 @@
 .App {
   display: flex;
-  flex-wrap: wrap;
   background-color: #282c34;
   height: 100%;
   min-height: 100vh;
@@ -10,7 +9,8 @@
 
 table {
 	border-collapse: collapse;
-  width: 100%;
+  	width: 100%;
+	font-size: 14px;
 }
 
 table td {
@@ -28,6 +28,11 @@ table thead th {
 	font-size: 13px;
 	border: 1px solid #878787;
 }
+
+table tbody {
+	font-size: 12px;
+}
+
 table tbody td {
 	color: #282c34;
 	border: 1px solid #dddfe1;

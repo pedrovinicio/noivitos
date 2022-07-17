@@ -34,7 +34,7 @@ app.post('/checklist', (req, res) => {
     valor_previsto: Number(req.body.valor_previsto)
   }
   if (req.body.contratado) {
-    newChecklistItem.descricao = req.body.descricao;
+    newChecklistItem.fornecedor = req.body.fornecedor;
     newChecklistItem.valor_real = Number(req.body.valor_real);
     newChecklistItem.valor_pago = Number(req.body.valor_pago);
     newChecklistItem.quitado = newChecklistItem.valor_real === newChecklistItem.valor_pago

@@ -1,6 +1,5 @@
 .checklist {
     padding: 0.5rem;
-    flex-grow: 4;
 }
 
 .iconResolved{
@@ -15,4 +14,8 @@
 
 .actionButtons {
     text-align: center;
+}
+
+.tableInput {
+    width: 95%;
 }
