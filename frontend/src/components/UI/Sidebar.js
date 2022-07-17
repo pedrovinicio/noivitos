@@ -9,7 +9,7 @@ const Sidebar = (props) => {
         <Card className={classes.sidebar}>
             <div className={`${classes.item} ${props.selected === 'Checklist' ? classes.selected : ''}`}
                  onClick={() => props.onMenuChanged('Checklist')}>
-                <FontAwesomeIcon icon={faListCheck} size="lg"/><span style={{ marginLeft: "10px" }}>Checklist</span>
+                <FontAwesomeIcon icon={faListCheck} size="lg"/><span style={{ marginLeft: "15px" }}>Checklist</span>
             </div>
             <div className={`${classes.item} ${props.selected === 'Guests' ? classes.selected : ''}`}
                  onClick={() => props.onMenuChanged('Guests')}>

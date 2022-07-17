@@ -1,12 +1,12 @@
 .sidebar {
     padding: 0.5rem;
-    width: 200px;
+    width: 170px;
+    min-width: 170px;
 }
 
 .item {
-    text-align: center;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 1.25rem;
 }
 
 .selected {

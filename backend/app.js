@@ -28,23 +28,10 @@ app.get('/checklist', (req, res) => {
 })
 
 app.post('/checklist', (req, res) => {
-  let newChecklistItem = {
-    id: uuid(),
-    nome: req.body.nome,
-    valor_previsto: Number(req.body.valor_previsto)
-  }
-  if (req.body.contratado) {
-    newChecklistItem.fornecedor = req.body.fornecedor;
-    newChecklistItem.valor_real = Number(req.body.valor_real);
-    newChecklistItem.valor_pago = Number(req.body.valor_pago);
-    newChecklistItem.quitado = newChecklistItem.valor_real === newChecklistItem.valor_pago
-    newChecklistItem.contratado = true;
-  } else {
-    newChecklistItem.contratado = false;
-  }
+  let newChecklistItem = createNewChecklistItem(req.body);
   db.data.checklist.push(newChecklistItem);
   db.write();
-  res.send(db.data.checklist);
+  res.send(newChecklistItem);
 })
 
 app.delete('/checklist/:id', (req, res) => {
@@ -53,6 +40,23 @@ app.delete('/checklist/:id', (req, res) => {
   res.send(db.data.checklist);
 })
 
+function createNewChecklistItem(body){
+  let newChecklistItem = {
+    id: uuid(),
+    nome: body.nome,
+    valor_previsto: Number(body.valor_previsto)
+  }
+  if (body.contratado) {
+    newChecklistItem.fornecedor = body.fornecedor;
+    newChecklistItem.valor_real = Number(body.valor_real);
+    newChecklistItem.valor_pago = Number(body.valor_pago);
+    newChecklistItem.quitado = newChecklistItem.valor_real === newChecklistItem.valor_pago
+    newChecklistItem.contratado = true;
+  } else {
+    newChecklistItem.contratado = false;
+  }
+  return newChecklistItem;
+}
 
 app.listen(3001, () => {
   console.log(`Example app listening on port 3001`)

@@ -19,3 +19,30 @@
 .tableInput {
     width: 95%;
 }
+
+.summaryTitle {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.summaryRow {
+    display: flex;
+}
+
+.summaryRowLast {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.summaryTextContainerLeft {
+    margin-left: 2rem;
+    width: 50%;
+    font-size: 14px;
+}
+.summaryTextContainerRight {
+    margin-right: 2rem;
+    width: 50%;
+    font-size: 14px;
+}
